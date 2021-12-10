@@ -277,22 +277,13 @@ MobGrind:
 	Delay := 0
 	Sleep 500
 	While (BreakLoop = 0)
-	{
-		;on each loop send RIGHT key down as it can be lost when switching focus
-		ControlClick, , ahk_id %id%, ,Right, , NAD
-		
-		if (BreakLoop = 1)
-		{
-			; On Ctrl+Alt+S detected forces a RIGHT mouse key UP
-			ControlClick, , ahk_id %id%, ,Right, , NAU
-			Return
-		}
+
 		
 		Sleep 100 ;100 ms
 		;Delay between LEFT clicks is controled by sleep delay above * value tested here (ie 12)
 		; Example = 100ms * 12 = 1.2 seconds
 		;This method allows AHK to better exit this mode and respond quicker to Stop command
-		if (Delay >= 12)
+		if (Delay >= 6)
 		{
 			; If delay counter reached, reset counter and send a LEFT click
 			Delay := 0
