@@ -277,7 +277,7 @@ MobGrind:
 	Delay := 0
 	Sleep 500
 	While (BreakLoop = 0)
-
+	{
 		
 		Sleep 100 ;100 ms
 		;Delay between LEFT clicks is controled by sleep delay above * value tested here (ie 12)
